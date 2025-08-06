@@ -1,0 +1,38 @@
+MAN(1)
+
+NAME
+  man, apropos, whatis - display online manual documentaion pages
+
+DESCRIPTION
+  The man utility finds and displays online manual online manual documentation pages. If mansect is provided, man restricts the search to the specific section of the manucal.
+
+  The sections of the manual are:
+    1. General Commands Manual
+    2. System Calls Manual
+    3. Library Functions Manual
+    4. Kernel Interfaces Manual
+    5. File Formats Manual
+    6. Games Manual
+    7. Miscellaneous Information Manual
+    8. System Manger's Manual
+    9. kernel Developer's Manual
+
+  Options that man understands:
+
+  -M manpath
+    Forces a specific colon separeted manual path instead of the default search path. See manpath(1).
+    Overrides the MANPATH environment variable.
+    
+  -P pager
+    Use specified pager. Defaults to "less -sR" if color support is enabled, or "less -s" Overrides the MANPAGER environment variable, which in turn overrides the PAGER environment variable.
+
+  -S mansect (settings of mansect)
+    Restricts manual sections searched to the specified colon delimited list. Defaults to "1:8:2:3:3lua:n:4:5:6:7:9:l". Overrides the MANSECT environment variable.
+
+  -a Display all manual pages instead of just the first found for each page argument.
+
+  -d Printextra debugging information. Repeat for increasedverbosity. Does not display the manual page.
+
+  -f Emulaate whatis(1). Note that only a subset of options will have any effect when man is invoked in this mode. See the below descripiton of whatis options for details.
+
+  -h Display short help message and exit.
