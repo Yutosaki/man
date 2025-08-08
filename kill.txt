@@ -1,0 +1,51 @@
+KILL(1)
+
+NAME
+  kill - terminate or signal a process
+
+DESCRIOTION
+  The kill utility sends  asiganl to the processes specified by the pid operands.
+
+  Only the super-user may send siganls to other users' processes.
+
+  The options are as follows:
+
+  -s siganl_name
+    A symbolic signal name specifying the siganl to be sent instead of the default TERM.
+
+  -l [exit_status]
+    IF no operand is given, list the siganl names; otherwise, write the siganl name corresponding to exit_status.
+
+  -signal_name
+    A symbolic signal name specifying signal to be setn insetead of the DEFAULt TERM.
+
+  -signal_number
+    A non-negative decimal integer, specifying the signal to be sent instead of the default TERM.
+
+  The following PIDs have special meanings:
+
+  -1 If superuser, broadcast the siganl to all processes; otherwise broadcast to all processess belonging to the user.
+
+  Some of the more commonly used signals:
+
+  1 HUP(hang up)
+  2 INT(interrupt)
+  3 QUIT(quit)
+  6 ABRT(abort)
+  9 KILL(non-catchable, non-ignorable kill)
+  14 ALRM(alarm clock)
+  15 TERM(software termination signal)
+
+  Some shells may provide a builtin kill command which is similar or identical to this utility. Consult the builtin(1) manual page.
+
+EXIT STATUS
+  The kill utility exits 0 on success, and >0 if an error occurs.
+
+EXAMPLES
+  Terminate the processes with PIDs 142 and 157:
+    kill 142 157
+  Send the hangup siganl (SIGHUP) to the process with PID 507:
+    kill -s HUP 507
+  
+HISTORY
+   A kill command appeard in Version 3 AT&T UNIX in section 8 of the manual.
