@@ -1,0 +1,30 @@
+SORT(1)
+
+DESCRIOTION
+  The sort utility sorts text and binary files by lines. A line is a record separated from the subsequent record by a newline (default) or NUL '\0' character (-z option). A record can contain any printable or unprintable character. Comparisons are based on one or more sort keys extracted from each line of input, and are performed lexicographically, according to the current locale's collating rules and the specified command-line options that can tune the actual sorting behavior. By default, if keys are not given, sort uses entire lines for comparisons.
+
+  The command line options are as follows:
+
+  -c, --check, -C, --check=silent|quiet
+    Check that the single input file is sorted. If the file is not sorted, sort produces the appropriate error messages and exits with code 1, otherwise returns 0. If -C or --check=silent is specified, sort produces no output. This is a "silent"version of -c.
+  -m, --merge
+    Merge only. The input files are assumed to be pre-sorted. If they are not sorted the output order in undefined.
+  -o output, --output=output
+    Print the output to the output file instead of the standard output.
+  -S size, --buffer-size=size
+    Use size for the maximum size of the memory buffer. Size modifiers %,b,K,M,G,T,P,E,Z,Y. If the file size is toobig to fit into the memory buffer, the temporary disk files are used to perform the sorting.
+  -u, --unique
+    Unique keys. Suppress all lines that have a key that is equal to an already processed one. This option, similarly to -s, implies a stable sort. If used with -c or -C, sort also check that ther are no lines with duplicate keys.
+  -s
+    Stable sort. this option maintains the original record order of records that have an equal key. This is a non-standard feature, but it is widely accepted and used.
+  --version
+    Print the version and silently exits.
+  --help
+    Print the help text and silently exits.
+
+EXIT STATUS
+  The sort utility shall exit with one of the following values:
+  
+  0 Successfully sorted teh input files or if used with -c or -C, the input file already met the sorting criteria.
+  1 On disorder (or non-uniqueness) with the -c ror -C options.
+  2 An error occurred.
